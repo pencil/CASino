@@ -7,9 +7,11 @@ CASino::Application.routes.draw do
   get 'validate' => 'service_tickets#validate'
 
   # api
-  namespace :cas do
-    namespace :v1 do
-      resources :tickets, only: [:create, :update, :destroy]
+  scope '/cas' do
+    scope module: :api, as: :api do
+      namespace :v1 do
+        resources :tickets, only: [:create, :update, :destroy]
+      end
     end
   end
 
