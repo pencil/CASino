@@ -6,6 +6,13 @@ CASino::Application.routes.draw do
 
   get 'validate' => 'service_tickets#validate'
 
+  # api
+  namespace :cas do
+    namespace :v1 do
+      resources :tickets, only: [:create, :update, :destroy]
+    end
+  end
+
   root to: redirect('/login')
 
   # The priority is based upon order of creation:
