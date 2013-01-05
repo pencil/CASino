@@ -1,8 +1,0 @@
-<h1>Logged out</h1>
-<p>
-  <% if @url.nil? %>
-    <%= t('logout.logged_out_without_url') %>
-  <% else %>
-    <%= t('logout.logged_out_with_url') %> <a href="<%= @url %>"><%= @url %></a>
-  <% end %>
-</p>
